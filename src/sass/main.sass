@@ -1,0 +1,80 @@
+@import base/normalize
+@import base/variables
+@import base/fonts
+
+body 
+  background: $colorDark
+  color: $colorLight
+  height: 100vh
+  font-family: 'Roboto-Regular'
+
+.greetings
+  position: absolute
+  top: 40px
+  left: 40px
+  font-size: 14px
+  @media (min-width: 320px) and (max-width: 480px)
+    position: relative
+    left: 0
+    display: block
+    text-align: center
+
+.personal-info
+  position: absolute
+  bottom: 40px
+  left: 40px
+  font-family: 'RobotoCondensed-Regular'
+  .name
+    font-size: 32px
+    text-transform: uppercase
+    @media (min-width: 320px) and (max-width: 480px)
+      font-size: 25px
+  .passion
+    font-size: 22px
+    color: $colorStyle
+    margin-bottom: 24px
+    font-family: 'RobotoCondensed-Light'
+    @media (min-width: 320px) and (max-width: 480px)
+      font-size: 18px
+  .social-links
+    list-style: none
+    padding: 0
+    margin: 0
+    li 
+      display: inline
+      margin-right: 15px
+      &:last-child
+        margin-right: 0
+      a 
+        display: inline-block
+        &:focus
+          outline: none 
+        img 
+          height: 24px
+          filter: invert(100%) sepia(2%) saturate(9%) hue-rotate(353deg) brightness(102%) contrast(105%)
+          @media (min-width: 320px) and (max-width: 480px)
+            height: 20px
+
+.container
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+  @media (min-width: 320px) and (max-width: 480px)
+    justify-content: flex-start
+    padding-left: 40px
+  .welcome-message
+    display: inline-block
+    padding-bottom: 40px
+    white-space: nowrap
+    font-size: 70px
+    font-family: 'Roboto-Light'
+    @media (min-width: 320px) and (max-width: 480px)
+      font-size: 35px
+    @media (min-width: 481px) and (max-width: 767px) 
+      font-size: 55px
+    .colored
+      color: $colorStyle
+      &.selection
+        background: $colorSelection
+        color: $colorDark
