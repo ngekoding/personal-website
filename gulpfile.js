@@ -2,7 +2,7 @@ var gulp = require('gulp')
 var pug = require('gulp-pug')
 var sass = require('gulp-sass')
 var concat = require('gulp-concat')
-var uglify = require('gulp-uglify')
+var uglify = require('gulp-uglifyes')
 var browserSync = require('browser-sync').create()
 
 // Compile pug files into HTML
@@ -33,7 +33,9 @@ function scripts() {
     'src/js/**/*.js'
   ])
   .pipe(concat('script.js'))
-  .pipe(uglify())
+  .pipe(uglify().on('error', function(e){
+    console.log(e)
+  }))
   .pipe(gulp.dest('dist/assets/js'))
   .pipe(browserSync.stream())
 }
