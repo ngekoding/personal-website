@@ -1,6 +1,14 @@
 doctype html
 html(lang="en")
   head
+    // Global site tag (gtag.js) - Google Analytics
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-117115842-1")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-117115842-1');
+      
     title Ngekoding - Design and code with love.
     link(rel="stylesheet", href="assets/css/main.css", type="text/css")
     link(rel="shortcut icon", href="assets/images/favicon.png")
@@ -10,7 +18,9 @@ html(lang="en")
     meta(name="keywords", content="personal, portfolio, web design, developer")
 
   body
-    span.greetings Ngekoding.com
+    .overlay
+
+    span.greetings Ngekoding
 
     span.personal-info
       .name Nur Muhammad
@@ -29,6 +39,6 @@ html(lang="en")
       .welcome-message
         | Helping your life<br>
         span.colored.typed
-  
+
   script(src="assets/js/script.js")
     

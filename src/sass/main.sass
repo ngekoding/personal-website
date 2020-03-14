@@ -14,7 +14,37 @@ body
   @media not all and (hover:hover)
     height: var(--app-height)
 
+.overlay
+  background: rgba(white,0.5)
+  position: absolute
+  top: 20px
+  bottom: 20px
+  right: 20px
+  left: 20px
+  z-index: 0
+
+img.decoration
+  display: none
+  position: absolute
+  width: 30px
+  &.tl 
+    top: 17px
+    left: 17px
+  &.tr
+    top: 17px
+    right: 17px
+    transform: rotate(90deg)
+  &.bl 
+    bottom: 17px
+    left: 17px
+    transform: rotate(-90deg)
+  &.br
+    bottom: 17px
+    right: 17px
+    transform: rotate(-180deg)
+
 .greetings
+  z-index: 1
   position: absolute
   top: 40px
   left: 40px
@@ -26,6 +56,7 @@ body
     text-align: center
 
 .personal-info
+  z-index: 1
   position: absolute
   bottom: 40px
   left: 40px
@@ -53,15 +84,19 @@ body
         margin-right: 0
       a 
         display: inline-block
+        opacity: 0.7
         &:focus
           outline: none 
+        &:hover
+          opacity: 0.9
         img 
           height: 24px
-          filter: invert(100%) sepia(2%) saturate(9%) hue-rotate(353deg) brightness(102%) contrast(105%)
+          // filter: invert(100%) sepia(2%) saturate(9%) hue-rotate(353deg) brightness(102%) contrast(105%)
           @media (min-width: 320px) and (max-width: 480px)
             height: 20px
 
 .container
+  z-index: 1
   height: 100vh
   display: flex
   align-items: center
@@ -72,6 +107,7 @@ body
   @media not all and (hover:hover)
     height: var(--app-height)
   .welcome-message
+    z-index: 1
     display: inline-block
     padding-bottom: 40px
     white-space: nowrap
@@ -85,5 +121,5 @@ body
     .colored
       color: $colorStyle
       &.selection
-        background: $colorSelection
-        color: $colorDark
+        background: $colorLight
+        color: $colorSelection
